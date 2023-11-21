@@ -86,8 +86,8 @@ let first_name = prompt('Enter your firstname and press "Enter"  :   ');
 let middle_name = prompt('Enter your middleName and press "Enter"  :   ');
 let last_name = prompt('Enter your lastName and press "Enter"  :   ');
 let age = parseInt(prompt('Enter your age and press "Enter"  :' ));
-while (isNaN(age)) {
-    age = parseInt(prompt('Pl., Enter the number and press "Enter"  :' ));
-}
+// while (isNaN(age)) {
+//     age = parseInt(prompt('Pl., Enter the number and press "Enter"  :' ));
+// }
 let personInfo = `My fullname name is : ${first_name} ${middle_name} ${last_name}. I am ${age} old`;
 console.log(personInfo);
