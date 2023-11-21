@@ -51,6 +51,7 @@ let firstName = 'Nguyen';
 let middleName = 'Duc';
 let lastName = 'Huy';
 
+
 person_1 = `${firstName} ${middleName} ${lastName}`;
 console.log(person_1);
 
@@ -84,5 +85,6 @@ console.log('------------ Homework 1.4 --------------')
 firstName = prompt('Enter your firstname and press "Enter"  :   ');
 middleName = prompt('Enter your middleName and press "Enter"  :   ');
 lastName = prompt('Enter your lastName and press "Enter"  :   ');
-fullName = `${firstName} ${middleName} ${lastName}`;
-console.log(fullName);
+let age = parseInt(prompt('Enter your age and press "Enter"  :' ));
+let personInfo = `My fullname name is : ${firstName} ${middleName} ${lastName}. I am ${age} old`;
+console.log(personInfo);
