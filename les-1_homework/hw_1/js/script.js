@@ -57,6 +57,9 @@ console.log(person_1);
 person_2 = firstName.concat(' ', middleName).concat(' ', lastName);
 console.log(person_2);
 
+person_3 = firstName + ' ' + middleName + ' ' + lastName;
+console.log(person_3);
+
 // -----------------------------------------------------------------------------------------------------------------
 
 // 3- За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
@@ -78,8 +81,8 @@ console.log(typeof (c));
 
 console.log('------------ Homework 1.4 --------------')
 
-firstName = prompt('Enter your firstname:   ');
-middleName = prompt('Enter your middleName:   ');
-lastName = prompt('Enter your lastName:   ');
+firstName = prompt('Enter your firstname and press "Enter"  :   ');
+middleName = prompt('Enter your middleName and press "Enter"  :   ');
+lastName = prompt('Enter your lastName and press "Enter"  :   ');
 fullName = `${firstName} ${middleName} ${lastName}`;
 console.log(fullName);
