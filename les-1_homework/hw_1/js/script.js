@@ -26,7 +26,7 @@ console.log(numberMinus);
 let number_3 = 123;
 console.log(number_3);
 // ---------------------------------------------
-const PI = 3.;
+const PI = 3.14;
 console.log(PI);
 // ---------------------------------------------
 let number_4 = 2.7;
