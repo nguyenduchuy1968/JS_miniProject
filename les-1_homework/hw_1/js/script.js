@@ -82,9 +82,9 @@ console.log(typeof (c));
 
 console.log('------------ Homework 1.4 --------------')
 
-firstName = prompt('Enter your firstname and press "Enter"  :   ');
-middleName = prompt('Enter your middleName and press "Enter"  :   ');
-lastName = prompt('Enter your lastName and press "Enter"  :   ');
+let first_name = prompt('Enter your firstname and press "Enter"  :   ');
+let middle_name = prompt('Enter your middleName and press "Enter"  :   ');
+let last_name = prompt('Enter your lastName and press "Enter"  :   ');
 let age = parseInt(prompt('Enter your age and press "Enter"  :' ));
-let personInfo = `My fullname name is : ${firstName} ${middleName} ${lastName}. I am ${age} old`;
+let personInfo = `My fullname name is : ${first_name} ${middle_name} ${last_name}. I am ${age} old`;
 console.log(personInfo);
