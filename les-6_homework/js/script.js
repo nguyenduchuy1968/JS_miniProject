@@ -45,7 +45,7 @@ console.log('-------------------------------------------------------------------
 // let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
 
 let str2 = 'Ревуть воли як ясла повні';
-const stringToArray = str => str.split(',');
+const stringToArray = str => str.split(' ');
 
 console.log(stringToArray(str2));
 console.log('------------------------------------------------------------------------------------');
@@ -141,7 +141,8 @@ console.log('-------------------------------------------------------------------
 
 
 // - знайти піковий туз
-const aceOFSpade = playingCards.filter(card => card.value === 'ace' && card.suit === 'spade' );
+// const aceOFSpade = playingCards.filter(card => card.value === 'ace' && card.suit === 'spade' );
+const aceOFSpade = playingCards.find(card => card.value === 'ace');
 console.log('Ace of Spade :');
 console.log(aceOFSpade);
 console.log('----------------------------------------------------------------------------------');
@@ -165,9 +166,13 @@ console.log(diamondCards);
 console.log('----------------------------------------------------------------------------------');
 
 // - всі трефи від 9 та більше
-const clubsCards = playingCards.filter(card => card.suit === 'clubs' && card.value >= '9');
+const clubsCardbigger9 = playingCards.filter(card => card.suit === 'clubs').filter(card => {
+    if ((typeof +card.value) === "number" && +card.value> 9) {
+        return card;
+    }
+})
 console.log('Clubs cards biger 9:');
-console.log(clubsCards);
+console.log(clubsCardbigger9);
 console.log('----------------------------------------------------------------------------------');
 //
 
