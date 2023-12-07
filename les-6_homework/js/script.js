@@ -34,7 +34,7 @@ console.log('-------------------------------------------------------------------
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 
 let str = ' dirty string   ';
-const cleanSpace = str => str.replaceAll(' ', '');
+const cleanSpace = str => str.trim();
 
 console.log(cleanSpace(str));
 console.log('-----------------------------------------------------------------------------------');
