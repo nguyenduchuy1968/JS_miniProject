@@ -48,25 +48,6 @@ export const showPosts = function (obj, styleClassName_1, styleClassName_2, toDi
     }
 }
 
-// export const showInfo = function (obj, styleClassName_1, styleClassName_2, toDiv) {
-//     const mainDiv = document.getElementById(toDiv);
-//     const outerDiv = createHtmlElement('div', styleClassName_2, '');
-//     const infoArr = objToArr(obj); // convert object to array
-//
-//     for (const el of infoArr) {
-//         if (Array.isArray(el[1])) {
-//             showInfo(el[1], styleClassName_1, styleClassName_2, toDiv)
-//         } else {
-//             const p = createHtmlElement('p', '', `${el[0]}: ${el[1]}`);
-//             firstWordStyle(p, 'first-word'); // transforms the first word of paragraph to bold style
-//             const innerDiv = createHtmlElement('div', styleClassName_1, '');
-//             innerDiv.appendChild(p);
-//             outerDiv.appendChild(innerDiv);
-//         }
-//
-//     }
-//     mainDiv.appendChild(outerDiv);
-// }
 
 export const showInfo = function (obj, styleClassName_1, styleClassName_2, toDiv) {
     const mainDiv = document.getElementById(toDiv);
