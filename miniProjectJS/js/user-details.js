@@ -9,7 +9,7 @@
 
 
 //Import modules from module "./common-export-modules.js"
-import {createHtmlElement, wrapperFunc, firstWordStyle, showInfo} from "./common-export-modules.js"
+import {createHtmlElement, wrapperFunc, firstWordStyle, showInfo, objToArr} from "./common-export-modules.js"
 
 
 let urlUserInfo = new URL(location.href);
@@ -20,8 +20,8 @@ const h1 = document.getElementsByTagName('h1')[0];
 h1.innerText = `${userInfo.name}'s information`;
 
 
-//Show users' details
-showInfo(userInfo, 'user-block', 'user-details', 'userDetail');
+//First, convert obj "userInfo" to array (objToArr(userInfo)) then how users' details
+showInfo(objToArr(userInfo), 'user-block', 'user-details-block ', 'userDetails');
 
 
 function showPostTitle(arr, styleClassName_1, styleClassName_2, toDiv) {
@@ -45,7 +45,6 @@ function showPostTitle(arr, styleClassName_1, styleClassName_2, toDiv) {
         })
     }
 }
-
 
 
 //add the innerText "Show the user's posts" and "Click event" to the button . On Click the function "showPostTitle" will be called

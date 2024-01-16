@@ -26,7 +26,7 @@ export const wrapperFunc = async function (url, func, styleClassName_1 = '', sty
 }
 
 
-//This function uses recursion to access to tha data and show them
+//This function uses recursion to access to the data and show them
 export const showPosts = function (obj, styleClassName_1, styleClassName_2, toDiv) {
 
     const mainDiv = document.getElementById(toDiv);
@@ -48,41 +48,45 @@ export const showPosts = function (obj, styleClassName_1, styleClassName_2, toDi
     }
 }
 
-
-export const showInfo = function (obj, styleClassName_1, styleClassName_2, toDiv) {
+//Show users' details
+export const showInfo = function (arr, styleClassName_1, styleClassName_2, toDiv) {
     const mainDiv = document.getElementById(toDiv);
-    const outerDiv = createHtmlElement('div', styleClassName_2, '');
-    const infoArr = objToArr(obj); // convert object to array
-
-    for (const el of infoArr) {
-        if (el[0] === "0:" || el[0] === "0") {
-            continue;
+    // const infoArr = objToArr(obj); // convert object to array
+    for (const [k, v] of arr.entries()) {
+        if (v[1] && Array.isArray(v[1])) {
+            const p1 = createHtmlElement('p', styleClassName_1, `${v[0]}:`);
+            firstWordStyle(p1, 'first-word'); // transforms the first word of paragraph to bold style
+            mainDiv.appendChild(p1);
+            const outerDiv = createHtmlElement('div', styleClassName_2, '');
+            for (const [k1, v1] of v[1].entries()) {
+                console.log('2222', v1[0],v1[1] );
+                const p3 = createHtmlElement('p', '', `${v1[0]}: ${v1[1]}`);
+                firstWordStyle(p3, 'first-word-italic'); // transforms the first word of paragraph to bold style
+                outerDiv.append(p3);
+            }
+            mainDiv.appendChild(outerDiv);
+        } else {
+            const p = createHtmlElement('p', 'user-block', `${v[0]}: ${v[1]}`);
+            firstWordStyle(p, 'first-word'); // transforms the first word of paragraph to bold style
+            mainDiv.appendChild(p);
         }
-        if (el[1] === undefined) el[1] = ''
-        const p = createHtmlElement('p', '', `${el[0]}: ${el[1]}`);
-        firstWordStyle(p, 'first-word'); // transforms the first word of paragraph to bold style
-        const innerDiv = createHtmlElement('div', styleClassName_1, '');
-        innerDiv.appendChild(p);
-        outerDiv.appendChild(innerDiv);
+
     }
-    mainDiv.appendChild(outerDiv);
 }
 
 
 //This function convert object to array
-const infoArr = [];
-const objToArr = function (obj) {
+export const objToArr = function (obj) {
+    const arrObj = [];
     for (const [key, value] of Object.entries(obj)) {
         if (key && (typeof value === "object" && value !== null)) {
-            infoArr.push([`${key}`.toUpperCase()]);
-            objToArr(value);
+            arrObj.push([key, objToArr(value)])
         } else {
-            infoArr.push([key, value]);
+            arrObj.push([key, value]);
         }
     }
-    return infoArr;
+    return arrObj;
 }
-
 
 // This function transforms the first word of paragraph to bold style
 export const firstWordStyle = function(element, className) {

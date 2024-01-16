@@ -24,6 +24,7 @@ h1.innerText = `${userName}'s post information`;
 
 wrapperFunc(postDetailUrl, showPosts,  'user-block', 'user-details', 'postInfo' );
 
+
 // TimeOut allows us to wait when the show of user's information finishes then heading h2 will appear
 setTimeout(() =>{
     const h2 = document.getElementById('comments-heading');
