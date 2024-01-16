@@ -8,8 +8,8 @@
 // блоки з короткою іфною про post - в ряд по 5 .
 
 
-//Import modules from module "./common-export-modules.js"
-import {createHtmlElement, wrapperFunc, firstWordStyle, showInfo, objToArr} from "./common-export-modules.js"
+//Import modules from module "./--common-export-modules.js"
+import {createHtmlElement, wrapperFunc, firstWordStyle, showInfo, objToArr} from "./--common-export-modules.js"
 
 
 let urlUserInfo = new URL(location.href);
