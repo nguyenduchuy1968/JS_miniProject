@@ -59,7 +59,6 @@ export const showInfo = function (arr, styleClassName_1, styleClassName_2, toDiv
             mainDiv.appendChild(p1);
             const outerDiv = createHtmlElement('div', styleClassName_2, '');
             for (const [k1, v1] of v[1].entries()) {
-                console.log('2222', v1[0],v1[1] );
                 const p3 = createHtmlElement('p', '', `${v1[0]}: ${v1[1]}`);
                 firstWordStyle(p3, 'first-word-italic'); // transforms the first word of paragraph to bold style
                 outerDiv.append(p3);
@@ -70,7 +69,6 @@ export const showInfo = function (arr, styleClassName_1, styleClassName_2, toDiv
             firstWordStyle(p, 'first-word'); // transforms the first word of paragraph to bold style
             mainDiv.appendChild(p);
         }
-
     }
 }
 
